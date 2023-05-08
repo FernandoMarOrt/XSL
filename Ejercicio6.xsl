@@ -9,13 +9,25 @@
                 <title>Ejercicio1</title>
             </head>
             <body>
-                <h1>Sin Etiquetas</h1>
+                <h1>
+                    <xsl:value-of select="ies/@nombre" />
+                </h1>
+
+                <p>Pagina web:
+                
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="ies/@web" />
+                        </xsl:attribute>
+                        <xsl:value-of select="ies/@nombre" />
+                    </a>
+                    
+                </p>
 
                 <ul>
                     <xsl:apply-templates />
-                
+
                 </ul>
-                
 
 
             </body>
@@ -28,7 +40,7 @@
         <li>
             <xsl:value-of select="nombre" />
         </li>
-        
+
     </xsl:template>
 
 </xsl:stylesheet>

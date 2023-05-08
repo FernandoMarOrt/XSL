@@ -9,7 +9,6 @@
                 <title>Ejercicio1</title>
             </head>
             <body>
-                <h1>Sin Etiquetas</h1>
 
 
                 <xsl:apply-templates />

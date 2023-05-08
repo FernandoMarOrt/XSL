@@ -6,10 +6,10 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Ejercicio1</title>
+                <title>Ejercicio5</title>
             </head>
             <body>
-                <h1>IES Mar de Alboran</h1>
+                <h1><xsl:value-of select="ies/@nombre" /></h1>
 
 
                 <xsl:apply-templates />

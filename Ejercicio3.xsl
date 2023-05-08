@@ -6,10 +6,10 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Ejercicio1</title>
+                <title>Ejercicio3</title>
             </head>
             <body>
-                <h1>Sin Etiquetas</h1>
+          
 
                 <ul>
                     <xsl:apply-templates />
