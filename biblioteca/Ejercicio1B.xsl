@@ -9,18 +9,21 @@
                 <title>Ejercicio1B</title>
                 <style>
 
+                    td { border: 1px solid black; padding: 5px; }
                     .rojo{color:red}
-                    .amarillo{color:yellow}
-                    .verde{color:green}
-
 
                 </style>
             </head>
             <body>
 
 
-                <table border = "1px solid black">
+                <table border="1px solid black">
 
+                    <tr>
+                        <th>Título del libro</th>
+                        <th>Autores</th>
+                        <th>Editores</th>
+                    </tr>
 
                     <xsl:for-each select="bib/libro">
                         <xsl:sort select="titulo" order="descending" />
@@ -28,39 +31,80 @@
 
                         <tr>
                             <td>
-
-
                                 <p>
 
-                                    <xsl:value-of select="titulo" />
+                                    <xsl:choose>
+
+                                        <xsl:when test="precio &gt; 100">
+
+                                            <p class="rojo">
+
+                                                <xsl:value-of select="concat(titulo, ' (Caro)')" />
+
+                                            </p>
+
+
+                                        </xsl:when>
+
+                                        <xsl:otherwise>
+
+                                            <xsl:value-of select="titulo" />
+
+                                        </xsl:otherwise>
+
+                                    </xsl:choose>
 
                                 </p>
-
                             </td>
 
-                             <td>
-
-
-                                <p>
-
-                                    <xsl:value-of select="autor/nombre" />
-                                     <xsl:value-of select="autor/apellido" />
-                                    
-                                    
-                                </p>
-
-                            </td>
-
-                        
                             <td>
-
-
                                 <p>
 
-                                    <xsl:value-of select="editorial" />
+                                    <xsl:for-each select="autor">
+
+                                        <xsl:value-of select="nombre" />
+
+                                        <xsl:text> </xsl:text>
+
+                                        <xsl:value-of select="apellido" />
+
+                                        <xsl:if test="position() != last()">
+
+                                            <xsl:text>, </xsl:text>
+
+                                        </xsl:if>
+                                        
+                                    </xsl:for-each>
+
 
                                 </p>
+                            </td>
 
+                            <td>
+                                <p>
+
+                                    <xsl:for-each select="editor">
+
+                                        <xsl:value-of select="nombre" />
+
+                                        <xsl:text> </xsl:text>
+
+                                        <xsl:value-of select="apellido" />
+
+                                        <xsl:text> (</xsl:text>
+
+                                        <xsl:value-of select="afiliacion" />
+
+                                        <xsl:text>)</xsl:text>
+
+                                        <xsl:if test="position() != last()">
+
+                                            <xsl:text>, </xsl:text>
+
+                                        </xsl:if>
+                                    </xsl:for-each>
+
+                                </p>
                             </td>
 
                         </tr>
@@ -76,31 +120,3 @@
     </xsl:template>
 
 </xsl:stylesheet>
-
-
-<!--     <xsl:choose>
-
-
-                            <xsl:when test="precio > 100">
-
-                                <p class="rojo">
-
-                                    <xsl:value-of select="titulo" />
-
-                                </p>
-
-                            </xsl:when>
-
-
-                            <xsl:otherwise>
-
-                                <p>
-
-                                    <xsl:value-of select="titulo" />
-
-                                </p>
-
-                            </xsl:otherwise>
-
-
-                        </xsl:choose>-->
