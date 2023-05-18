@@ -12,15 +12,15 @@
 
           <xsl:for-each select="bib/libro">
 
-            <li>
+            <xsl:if test="precio &lt; 100">
 
-              <xsl:if test="precio &lt; 100">
+              <li>
 
                 <xsl:value-of select="titulo" />
 
-              </xsl:if>
-
-            </li>
+              </li>
+              
+            </xsl:if>
 
           </xsl:for-each>
 

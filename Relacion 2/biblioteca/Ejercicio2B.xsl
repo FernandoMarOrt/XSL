@@ -6,7 +6,7 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Ejercicio1B</title>
+                <title>Ejercicio2B</title>
                 <style>
 
                     td { border: 1px solid black; padding: 5px; }
@@ -27,7 +27,7 @@
                     </tr>
 
                     <xsl:for-each select="bib/libro">
-                        <xsl:sort select="precio" data-type="text" />
+                        <xsl:sort select="precio" />
 
                         <tr>
                             <td>
@@ -38,38 +38,38 @@
                                 </p>
                             </td>
 
-                            <td>
-                                <p>
 
-                                    <xsl:choose>
+                            <xsl:choose>
 
-                                        <xsl:when test="precio &gt; 100">
+                                <xsl:when test="precio &gt; 100">
 
-                                            <p class="rojoFondo">
+                                    <td class="rojoFondo">
 
-                                                <xsl:value-of select="titulo" />
+                                        <xsl:value-of select="titulo" />
 
-                                            </p>
+                                    </td>
 
 
-                                        </xsl:when>
+                                </xsl:when>
 
-                                        <xsl:otherwise>
+                                <xsl:otherwise>
 
-                                            <xsl:value-of select="titulo" />
+                                    <td>
 
-                                        </xsl:otherwise>
+                                        <xsl:value-of select="titulo" />
 
-                                    </xsl:choose>
+                                    </td>
 
+                                </xsl:otherwise>
 
-                                </p>
-                            </td>
+                            </xsl:choose>
+
 
                             <td>
                                 <p class="cursiva">
 
-                                    <xsl:value-of select="@año" />
+                                    <xsl:value-of select="@año" /> <!-- tambien puede aplicarle
+                                    cursiva con <em> <xsl:value-of select="@año" /> </em> -->
 
                                 </p>
                             </td>

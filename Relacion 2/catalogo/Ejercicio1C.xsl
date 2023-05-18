@@ -12,16 +12,16 @@
 
           <xsl:for-each select="catalogo/artistas/artista">
 
-            <li>
+            <xsl:if test="nacionalidad='España'">
+              <li>
 
-              <xsl:if test="nacionalidad='España'">
 
                 <xsl:value-of select="nombre" />
 
-              </xsl:if>
 
-            </li>
+              </li>
 
+            </xsl:if>
           </xsl:for-each>
 
         </ol>

@@ -14,7 +14,7 @@
             <xsl:sort select="apellido" />
 
             <li>
-              <xsl:value-of select="concat(apellido, ', ', nombre)" />
+              <xsl:value-of select="apellido" />,&#160;<xsl:value-of select="nombre" />
             </li>
 
           </xsl:for-each>

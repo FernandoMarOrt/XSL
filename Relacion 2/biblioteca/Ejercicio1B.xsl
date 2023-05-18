@@ -62,18 +62,9 @@
 
                                     <xsl:for-each select="autor">
 
-                                        <xsl:value-of select="nombre" />
+                                        <xsl:value-of select="nombre" />&#160; <xsl:value-of select="apellido"/><br />
 
-                                        <xsl:text> </xsl:text>
 
-                                        <xsl:value-of select="apellido" />
-
-                                        <xsl:if test="position() != last()">
-
-                                            <xsl:text>, </xsl:text>
-
-                                        </xsl:if>
-                                        
                                     </xsl:for-each>
 
 
@@ -85,24 +76,13 @@
 
                                     <xsl:for-each select="editor">
 
-                                        <xsl:value-of select="nombre" />
+                                        <xsl:value-of select="nombre" />&#160; 
+                                        <xsl:value-of select="apellido"/><br />
+                                        <xsl:value-of select="afiliacion"/>
 
-                                        <xsl:text> </xsl:text>
 
-                                        <xsl:value-of select="apellido" />
-
-                                        <xsl:text> (</xsl:text>
-
-                                        <xsl:value-of select="afiliacion" />
-
-                                        <xsl:text>)</xsl:text>
-
-                                        <xsl:if test="position() != last()">
-
-                                            <xsl:text>, </xsl:text>
-
-                                        </xsl:if>
                                     </xsl:for-each>
+
 
                                 </p>
                             </td>
