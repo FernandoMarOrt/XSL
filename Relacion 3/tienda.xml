@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?xml-stylesheet href="Ejercicio6T.xsl" type="text/xsl"?>
+<?xml-stylesheet href="Ejercicio7T.xsl" type="text/xsl"?>
 
 
 <tienda>
@@ -10,15 +10,18 @@
         <codigo>92</codigo>
         <cantidad>10</cantidad>
         <articulo>Radio-Casette</articulo>
+        <imagen>radio.png</imagen>
     </producto>
     <producto>
         <codigo>101</codigo>
         <cantidad>3</cantidad>
         <articulo>Sofá</articulo>
+        <imagen>sofa.png</imagen>
     </producto>
     <producto>
         <codigo>103</codigo>
         <cantidad>50</cantidad>
         <articulo>Reloj Cocina</articulo>
+        <imagen>reloj.png</imagen>
     </producto>
 </tienda>
