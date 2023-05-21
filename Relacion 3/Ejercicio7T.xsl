@@ -28,7 +28,7 @@
 
                     <xsl:for-each select="tienda/producto">
                         <xsl:sort select="articulo" />
-            <tr>
+                        <tr>
                             <xsl:choose>
 
                                 <xsl:when test="codigo &lt; 100">
@@ -39,14 +39,14 @@
                                     </td>
 
 
-                  <td
+                                    <td
                                         class="verde">
                                         <xsl:value-of select="articulo" />
 
                                     </td>
 
 
-                  <td
+                                    <td
                                         class="verde">
 
                                         <xsl:value-of select="cantidad" />
@@ -62,14 +62,14 @@
                                     </td>
 
 
-                  <td
+                                    <td
                                         class="azul">
                                         <xsl:value-of select="articulo" />
 
                                     </td>
 
 
-                  <td
+                                    <td
                                         class="azul">
 
                                         <xsl:value-of select="cantidad" />
@@ -86,14 +86,14 @@
                                     </td>
 
 
-                  <td
+                                    <td
                                         class="rojo">
                                         <xsl:value-of select="articulo" />
 
                                     </td>
 
 
-                  <td class="rojo">
+                                    <td class="rojo">
 
                                         <xsl:value-of select="cantidad" />
                                     </td>
@@ -101,11 +101,14 @@
                                 </xsl:otherwise>
 
                             </xsl:choose>
+                            
 
-
-                            <xsl:attribute name="src"> Imagenes/<xsl:value-of select="imagen"></xsl:value-of>
-
-                            </xsl:attribute>
+                            <td>
+                                <img src="">
+                                    <xsl:attribute name="src"> Imagenes/<xsl:value-of select="imagen" />
+                                    </xsl:attribute>
+                                </img>
+                            </td>
                         </tr>
 
                     </xsl:for-each>
